@@ -2,7 +2,7 @@
  * Java 1. Homework 3
  *
  * @author Andrey Z
- * @version 19.01.2022
+ * @version 22.01.2022
  */
 import java.util.Arrays;
 
@@ -52,17 +52,13 @@ class Lesson3{
     }
     public static void fillDiagonal() {
         int[][] arr = new int[4][4];
-        for (int i = 0; i < 4; i++) {
-            arr[0][0] = 1;
-            arr[1][1] = 1;
-            arr[2][2] = 1;
-            arr[3][3] = 1;
-            arr[0][3] = 1;
-            arr[1][2] = 1;
-            arr[2][1] = 1;
-            arr[3][0] = 1;
+        for (int i = 0; i < arr.length; i++) {
+            arr[i][i] = 1;
+            arr[i][arr.length - i -1] = 1;
         }
-        System.out.println(Arrays.deepToString(arr));
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(Arrays.toString(arr[i]));
+    }
     }
     public static int[] lenInit(int len, int initialValue){
     int arr[] = new int[len];
